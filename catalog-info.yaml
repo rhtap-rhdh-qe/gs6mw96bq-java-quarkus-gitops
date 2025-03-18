@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gs6mw96bq-java-quarkus-gitops
+  description: This is GitOps manifest for gs6mw96bq-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=gs6mw96bq-java-quarkus
+    backstage.io/kubernetes-id: gs6mw96bq-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: gs6mw96bq-java-quarkus   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gs6mw96bq-java-quarkus
